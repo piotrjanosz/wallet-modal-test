@@ -39,7 +39,7 @@ export const WalletModal: FC<WalletModalProps> = ({
   const hideModal = useCallback(() => {
     setFadeIn(false);
     setTimeout(() => setVisible(false), 150);
-  }, []);
+  }, [setFadeIn, setVisible]);
 
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
