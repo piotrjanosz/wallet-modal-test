@@ -41,10 +41,6 @@ export const WalletModal: FC<WalletModalProps> = ({
     setTimeout(() => setVisible(false), 150);
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') hideModal();
-  };
-
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
     hideModal();
@@ -63,6 +59,10 @@ export const WalletModal: FC<WalletModalProps> = ({
   };
 
   useLayoutEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') hideModal();
+    };
+
     const originalStyle = window.getComputedStyle(document.body).overflow;
     // Hack to enable fade in animation after mount
     setTimeout(() => setFadeIn(true), 0);
@@ -76,7 +76,7 @@ export const WalletModal: FC<WalletModalProps> = ({
       document.body.style.overflow = originalStyle;
       window.removeEventListener('keydown', handleKeyDown, false);
     };
-  }, [handleKeyDown]);
+  }, []);
 
   if (!rootElement) return null;
 
