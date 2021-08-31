@@ -53,7 +53,7 @@ const Wallet: FC = () => {
 
   return (
     <WalletProvider wallets={wallets} onError={onError} autoConnect>
-      <WalletModalProvider logo="/logo.svg">
+      <WalletModalProvider>
         <Navigation />
       </WalletModalProvider>
     </WalletProvider>
