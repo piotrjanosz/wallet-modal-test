@@ -28,9 +28,13 @@
 }
 
 .wallet-adapter-button-end-icon,
-.wallet-adapter-button-start-icon {
+.wallet-adapter-button-start-icon,
+.wallet-adapter-button-end-icon img,
+.wallet-adapter-button-start-icon img {
   display: flex;
-  max-width: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
   height: 24px;
 }
 
