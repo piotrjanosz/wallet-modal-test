@@ -76,7 +76,7 @@ export const WalletModal: FC<WalletModalProps> = ({
       document.body.style.overflow = originalStyle;
       window.removeEventListener('keydown', handleKeyDown, false);
     };
-  }, []);
+  }, [hideModal]);
 
   if (!rootElement) return null;
 
