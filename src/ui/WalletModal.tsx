@@ -1,6 +1,6 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletName } from '@solana/wallet-adapter-wallets';
-import React, { FC, useLayoutEffect, useMemo } from 'react';
+import React, { FC, useCallback, useLayoutEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { useWalletModal } from './useWalletModal';
 import { Button } from './Button';
@@ -36,10 +36,10 @@ export const WalletModal: FC<WalletModalProps> = ({
     [wallets, featuredWalletsNumber]
   );
 
-  const hideModal = () => {
+  const hideModal = useCallback(() => {
     setFadeIn(false);
     setTimeout(() => setVisible(false), 150);
-  };
+  }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
